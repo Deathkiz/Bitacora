@@ -61,8 +61,11 @@ public class Streams {
                 .collect(Collectors.toList());
         return result;
     }
-    public static List<String> ejercicio5(List<Transaction> list){
-
+    public static boolean ejercicio5(List<Transaction> list) {
+        boolean result = list.stream()
+                .peek(t -> System.out.println(t))
+                .anyMatch(t -> t.isApproved() == false);
+        return result;
     }
 }
 
